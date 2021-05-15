@@ -1,13 +1,14 @@
 import React from 'react'
-import {StyledCardWrapper, StyledText} from './Card.style'
+import {StyledCardWrapper, StyledText, StyledMovieImg} from './Card.style'
 
 
 
 
-const Card = (prop) => {
+const Card = ({title, posterImg}) => {
     return (
         <StyledCardWrapper>
-            <StyledText>{prop.title}</StyledText>
+            <StyledMovieImg src={posterImg}></StyledMovieImg>
+            <StyledText>{title}</StyledText>
         </StyledCardWrapper>
     )
 }
