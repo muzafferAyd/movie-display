@@ -39,7 +39,7 @@ export const StyledMovieTitle = styled.p`
   font-weight: bold;
   font-family: "Avenir Roman", "Helvetica", Helvetica, Arial, sans-serif;
   text-align:center;
-  margin-top:2px;
+  margin: 0;
 `;
 
 export const StyledMovieYear = styled.p`
@@ -54,6 +54,7 @@ export const StyledMovieYear = styled.p`
   border-radius:5px;
   padding:2px;
   opacity:0.7;
+  text-align:center;
 `;
 
 export const StyledMovieImg = styled.img`
