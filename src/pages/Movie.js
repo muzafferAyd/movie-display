@@ -2,6 +2,8 @@ import CardList from "../component/CardList/CardList";
 import {StyledCardList} from "../component/CardList/CardList.style";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Jumbotron from "../component/Jumbotron/Jumbotron";
+
 
 // https://api.themoviedb.org/3/movie/popular?api_key=API_KEY&language=en-US&page=1
 // https://image.tmdb.org/t/p/w500
@@ -27,9 +29,12 @@ const Movie = () => {
   }, []);
 
   return (
+    <>
+    <Jumbotron/>
     <StyledCardList>
       <CardList movieData={movieData} ImgUrl={ImgUrl}/>
     </StyledCardList>
+    </>
   );
 };
 
