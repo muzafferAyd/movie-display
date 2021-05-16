@@ -11,8 +11,8 @@ import { StyledAppContainer, StyledContextContainer } from "./App.style.js";
 const App = () => {
   return (
     <StyledAppContainer>
-      <Navbar />
-      <StyledContextContainer>
+      
+      <StyledContextContainer><Navbar />
         <Switch>
           <Route path="/about" component={About} exact />
           <Route path="/detail/:id" component={MovieDetail} exact />

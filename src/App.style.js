@@ -1,14 +1,13 @@
-import styled from 'styled-components';
-
+import styled from "styled-components";
 
 export const StyledAppContainer = styled.div`
- background-color:rgba(123,112,138);
-
-
+  background-color: rgba(123, 112, 138);
+  
 `;
 
 export const StyledContextContainer = styled.div`
-
-
+  width: 75rem;
+  margin: auto;
+  display: block;
 
 `;

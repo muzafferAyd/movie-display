@@ -14,10 +14,10 @@ export const Main = styled.div`
   font-size: 1rem;
   background: #0f0b1a;
   position: fixed;
-  @media (max-width: 960px) {
+  /* @media (max-width: 960px) {
     height: 12rem;
     background: #0f0b1a;
-  }
+  } */
 `;
 
 export const Copyright = styled.div`

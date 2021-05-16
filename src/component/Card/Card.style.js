@@ -1,22 +1,24 @@
 import styled from "styled-components";
 
 export const StyledCardWrapper = styled.div`
-  width: 9rem;
-  height:12.5rem;
+  width: 9.5rem;
+  height:13.5rem;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.1);
-  margin: 4px;
+  box-shadow: 0.18rem 0.12rem 0.62rem rgba(0, 0, 0, 0.1);
+  margin: 5px;
   padding: 2px;
-  transition: 0.3s;
+  transition: 0.2s;
   position: relative;
-  background-color:rgb(37, 47, 47);
+  background-color:   #2d2c42;
+  //rgb(37, 47, 47);
+
  
   
  
   &:hover {
     transform: scale(1.1);
-    box-shadow: 0.3rem 0.3rem 0.9rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.1);
     opacity: 0.85;
     cursor: pointer;
   }
@@ -38,9 +40,9 @@ export const StyledMovieRating = styled.div`
 `;
 
 export const StyledMovieTitle = styled.p`
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: bold;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;;
   text-align:center;
   margin: 0;
   box-sizing:border-box;
@@ -53,7 +55,7 @@ export const StyledMovieTitle = styled.p`
 `;
 
 export const StyledMovieYear = styled.p`
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   margin: 0;
   font-style: italic;
   font-weight: bolder;
@@ -63,7 +65,6 @@ export const StyledMovieYear = styled.p`
   background-color: #fff;
   border-radius:5px;
   padding:2px;
-  opacity:0.7;
   text-align:center;
 `;
 

@@ -1,8 +1,9 @@
 import styled from "styled-components"
 
 export const StyledJumbotron = styled.div`
-height:6rem;
+height:7rem;
 background-color: #A1A0C4;
+
 font-weight:bold;
 text-align:center;
 align-items:center;
@@ -14,6 +15,6 @@ display:flex;
 `;
 
 export const StyledJumbotronTitle = styled.h1`
-    color:#252f2f;
+    color:rgb(37, 47, 47);
 `;
 

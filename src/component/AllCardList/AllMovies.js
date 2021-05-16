@@ -3,13 +3,13 @@ import Card from "../Card/Card";
 
 
 
-const CardList = ({movieData, ImgUrl}) => {
+const AllMovies = ({allMovieData, ImgUrl}) => {
 
   return (
     <>
     
-      {movieData &&
-        movieData.map((movie) => {
+      {allMovieData &&
+        allMovieData.map((movie) => {
           return (
             <Card
               key={movie.id}
@@ -24,4 +24,4 @@ const CardList = ({movieData, ImgUrl}) => {
   );
 };
 
-export default CardList;
+export default AllMovies;
