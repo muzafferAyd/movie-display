@@ -9,11 +9,11 @@ const apiKey = process.env.REACT_APP_API_KEY;
 
 const MovieDetail = () => {
   const { id } = useParams();
- 
-  const [movieDetails, setMovieDetails] = useState([])
+
+  const [movieDetails, setMovieDetails] = useState([]);
   useEffect(() => {
     axios
-      .get(BaseMovieDetailUrl+id, {
+      .get(BaseMovieDetailUrl + id, {
         params: {
           api_key: apiKey,
         },

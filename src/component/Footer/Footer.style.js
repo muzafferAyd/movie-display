@@ -24,10 +24,10 @@ export const Main = styled.div`
 
 export const Copyright = styled.div`
   margin: 0.5rem;
-  display:flex;
-  align-items:baseline;
-  svg{
-    padding-right:10px;
+  display: flex;
+  align-items: baseline;
+  svg {
+    padding-right: 10px;
   }
 `;
 export const SocialMedia = styled.div`
@@ -39,6 +39,4 @@ export const SocialIcon = styled.div`
   margin: 0.5rem;
 `;
 
-export const MiniLogo = styled.div`
-
-`;
+export const MiniLogo = styled.div``;

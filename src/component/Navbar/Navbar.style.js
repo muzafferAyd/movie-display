@@ -2,33 +2,35 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const NavList = styled.div`
-  width:100%;
+  width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content:center;
+  justify-content: center;
   font-size: 1rem;
   background: #0f0b1a;
 
   position: sticky;
-  top:0;
-  z-index:1;
+  top: 0;
+  z-index: 1;
 `;
 export const Logo = styled.a`
-width:30%;
+  width: 30%;
   align-items: center;
   margin: 1rem;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 1rem;
   flex-grow: 1;
- svg{
-background-color:white;
-padding:3px;
-border-radius:2px;
-align-items:baseline;
- }
+  color: white;
+  display: flow-root;
+  svg {
+    background-color: white;
+    padding: 3px;
+    border-radius: 2px;
+    align-items: baseline;
+  }
 `;
 export const Menu = styled.div`
   display: flex;

@@ -37,7 +37,9 @@ const About = () => {
         qui ut magna.
       </p>
       <StyledAboutPageSecTitle>Contact Us</StyledAboutPageSecTitle>
-      <p>Address: Occaecat eiusmod laboris Lorem elit pariatur   Istanbul / TURKEY</p>
+      <p>
+        Address: Occaecat eiusmod laboris Lorem elit pariatur Istanbul / TURKEY
+      </p>
       <p>+90 999 99 99</p>
     </StyledAboutPage>
   );

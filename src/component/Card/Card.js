@@ -7,7 +7,7 @@ import {
   StyledMovieYear,
 } from "./Card.style";
 
-const Card = ({ title, posterImg, rating ,releasedData}) => {
+const Card = ({ title, posterImg, rating, releasedData }) => {
   return (
     <StyledCardWrapper>
       <StyledMovieImg src={posterImg}></StyledMovieImg>
