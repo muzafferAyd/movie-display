@@ -10,7 +10,7 @@ export const NavList = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   background: #0f0b1a;
   position: sticky;
   top:0;

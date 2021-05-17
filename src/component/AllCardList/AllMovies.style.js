@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
-export const StyledCardList = styled.div`
-  display: flex;
-  overflow:hidden;
+export const StyledAllMovies = styled.div`
+  display:flex;
+  flex-wrap:wrap;
+
+  margin-left:55px;
   /* @media (max-width: 800px) {
    
     flex-direction: column;
@@ -10,6 +12,7 @@ export const StyledCardList = styled.div`
 
 `;
 
-export const StyledCardTitle = styled.h2`
+export const StyledAllMoviesTitle = styled.h2`
   color: #0f0b1a;
+  margin-left:55px;
 `;

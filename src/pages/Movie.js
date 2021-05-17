@@ -1,10 +1,16 @@
 import CardList from "../component/CardList/CardList";
 import AllCardList from "../component/AllCardList/AllMovies";
-import { StyledCardList } from "../component/CardList/CardList.style";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Jumbotron from "../component/Jumbotron/Jumbotron";
-import { StyledCardTitle } from "../component/CardList/CardList.style";
+import {
+  StyledCardTitle,
+  StyledCardList,
+} from "../component/CardList/CardList.style";
+import {
+  StyledAllMovies,
+  StyledAllMoviesTitle,
+} from "../component/AllCardList/AllMovies.style";
 
 /* POPULAR MOVIES API
       https://api.themoviedb.org/3/movie/popular?api_key=API_KEY&language=en-US&page=1
@@ -53,14 +59,14 @@ const Movie = () => {
   return (
     <>
       <Jumbotron />
-      <StyledCardTitle>Popular Movies</StyledCardTitle>
       <StyledCardList>
+        <StyledCardTitle>Popular Movies</StyledCardTitle>
         <CardList movieData={movieData} ImgUrl={ImgUrl} />
       </StyledCardList>
-      <StyledCardTitle>All Movies</StyledCardTitle>
-      <StyledCardList>
+      <StyledAllMoviesTitle>All Movies</StyledAllMoviesTitle>
+      <StyledAllMovies>
         <AllCardList allMovieData={allMovieData} ImgUrl={ImgUrl} />
-      </StyledCardList>
+      </StyledAllMovies>
     </>
   );
 };

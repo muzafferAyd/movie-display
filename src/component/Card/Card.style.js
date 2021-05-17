@@ -11,6 +11,7 @@ export const StyledCardWrapper = styled.div`
   transition: 0.2s;
   position: relative;
   background-color:   #2d2c42;
+  float:left;
   //rgb(37, 47, 47);
 
  
@@ -27,7 +28,7 @@ export const StyledCardWrapper = styled.div`
 export const StyledMovieRating = styled.div`
   background-color: #f4bd2c;
   border-radius: 100px;
-  padding: 0 7px;
+  padding: 0 8px;
   line-height: 18px;
   font-weight: bold;
   color: #000;
@@ -36,6 +37,9 @@ export const StyledMovieRating = styled.div`
   position: absolute;
   top: 2%;
   right: 3%;
+  min-width:0.7rem;
+  text-align:center;
+  
   
 `;
 
