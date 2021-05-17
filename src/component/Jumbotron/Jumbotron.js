@@ -4,7 +4,7 @@ import {StyledJumbotron, StyledJumbotronTitle} from "./Jumbotron.style"
 const Jumbotron = () => {
     return (
         <StyledJumbotron>
-            <StyledJumbotronTitle>Welcome Movie Archive</StyledJumbotronTitle>
+            <StyledJumbotronTitle>Welcome to Movie Archive</StyledJumbotronTitle>
         </StyledJumbotron>
     )
 }
