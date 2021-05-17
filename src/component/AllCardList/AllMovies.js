@@ -15,6 +15,7 @@ const AllMovies = ({ allMovieData, ImgUrl }) => {
               posterImg={ImgUrl + movie.poster_path}
               rating={movie.vote_average}
               releasedData={movie.release_date}
+              id={movie.id}
             />
           );
         })}

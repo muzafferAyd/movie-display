@@ -1,6 +1,8 @@
 import Card from "../Card/Card";
 
+
 const CardList = ({ movieData, ImgUrl }) => {
+
   return (
     <>
       {movieData &&
@@ -12,6 +14,7 @@ const CardList = ({ movieData, ImgUrl }) => {
               posterImg={ImgUrl + movie.poster_path}
               rating={movie.vote_average}
               releasedData={movie.release_date}
+              id={movie.id}
             />
           );
         })}

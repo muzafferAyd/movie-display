@@ -1,4 +1,5 @@
 import React from "react";
+import {useHistory} from "react-router-dom"
 import {
   StyledCardWrapper,
   StyledMovieTitle,
@@ -7,9 +8,10 @@ import {
   StyledMovieYear,
 } from "./Card.style";
 
-const Card = ({ title, posterImg, rating, releasedData }) => {
+const Card = ({ title, posterImg, rating, releasedData , id}) => {
+  const history = useHistory();
   return (
-    <StyledCardWrapper>
+    <StyledCardWrapper onClick={()=>history.push(`/detail/${id}`)}>
       <StyledMovieImg src={posterImg}></StyledMovieImg>
       <StyledMovieTitle>{title}</StyledMovieTitle>
       <StyledMovieRating>{rating}</StyledMovieRating>
