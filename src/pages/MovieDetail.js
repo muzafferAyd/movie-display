@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import DetailedCard from "../component/DetailedCard/DetailedCard";
 
 // https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US
 
 const MovieDetailBaseUrl = "https://api.themoviedb.org/3/movie/";
 const apiKey = process.env.REACT_APP_API_KEY;
+const ImgUrl = "https://image.tmdb.org/t/p/w500";
 
 const MovieDetail = () => {
   const { id } = useParams();
@@ -24,11 +26,11 @@ const MovieDetail = () => {
   console.log(movieDetails);
 
   return (
-    <div>
-      <h1>{movieDetails?.original_title}</h1>
-      <p>{movieDetails?.overview}</p>
-      <h2>{movieDetails?.release_date}</h2>
-    </div>
+    <DetailedCard
+      movieDetails={movieDetails}
+      posterImg={ImgUrl + movieDetails?.poster_path}
+      backdropImg={ImgUrl + movieDetails?.backdrop_path}
+    />
   );
 };
 
