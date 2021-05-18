@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
 export const StyledCardWrapper = styled.div`
-  width: 9.5rem;
-  height: 13.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 10rem;
+  height: 13rem;
   border-radius: 5px;
   box-shadow: 0.18rem 0.12rem 0.62rem rgba(0, 0, 0, 0.1);
   margin: 5px;
-  padding: 2px;
+
   transition: 0.2s;
   position: relative;
   background-color: #2d2c42;
@@ -51,6 +50,7 @@ export const StyledMovieTitle = styled.p`
   overflow: hidden;
   white-space: nowrap;
   align-items: center;
+  padding:2px;
 `;
 
 export const StyledMovieYear = styled.p`
@@ -72,4 +72,5 @@ export const StyledMovieImg = styled.img`
   height: 86%;
   border-radius: 4px;
   position: relative;
+  padding: 5px;
 `;

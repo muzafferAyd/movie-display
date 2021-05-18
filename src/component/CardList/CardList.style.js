@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 export const StyledCardList = styled.div`
-  display: block;
+  display: inline-block;
   overflow: hidden;
   flex-wrap:wrap;
   margin: auto;
-  height: 260px;
+  height: 270px;
   align-content: center;
-  margin-left: 55px;
-  /* @media (max-width: 800px) {
-   
-    flex-direction: column;
-  } */
+  margin-left: 35px;
+   @media (max-width: 800px) {
+     display:inline;
+     flex-direction:row;
+  } 
 `;
 
 export const StyledCardTitle = styled.h2`

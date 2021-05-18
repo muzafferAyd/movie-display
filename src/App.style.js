@@ -6,7 +6,7 @@ export const StyledAppContainer = styled.div`
 `;
 
 export const StyledContextContainer = styled.div`
-  width: 80rem;
+  //width: 80rem;
   //height:80rem;
   // min-height:45rem;
   height: auto;

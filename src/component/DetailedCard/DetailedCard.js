@@ -8,11 +8,13 @@ export default function DetailedCard({
   backdropImg,
   videoKey,
 }) {
+
+
   return (
     <Card
       style={{
         borderRadius: "1rem",
-        width: "40rem",
+        width: "30rem",
         margin: "auto",
         padding: "2rem",
       }}
@@ -23,7 +25,7 @@ export default function DetailedCard({
         alt="Movie-poster"
         style={{
           borderRadius: "1rem",
-          width: "25rem",
+          width: "18rem",
           margin: "auto",
           height: "25rem",
         }}
@@ -36,7 +38,7 @@ export default function DetailedCard({
         <Trailer movieTitle={movieDetails.title} videoKey={videoKey} />
       </Card.Body>
       <ListGroup
-        style={{ width: "25rem", float: "right" }}
+        style={{ width: "18rem", float: "right" }}
         className="list-group-flush"
       >
         <ListGroupItem>Rating: {movieDetails?.vote_average}</ListGroupItem>
@@ -50,4 +52,8 @@ export default function DetailedCard({
       </Card.Body>
     </Card>
   );
+
+
 }
+
+

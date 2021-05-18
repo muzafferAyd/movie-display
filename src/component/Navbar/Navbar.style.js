@@ -11,26 +11,33 @@ export const NavList = styled.div`
   justify-content: center;
   font-size: 1rem;
   background: #0f0b1a;
-
   position: sticky;
   top: 0;
   z-index: 1;
+  @media (max-width: 960px) {
+    height: 12rem;
+
+  }
+
+
 `;
 export const Logo = styled.a`
-  width: 30%;
-  align-items: center;
   margin: 1rem;
   cursor: pointer;
   font-size: 1rem;
   flex-grow: 1;
   color: white;
-  display: flow-root;
   svg {
     background-color: white;
     padding: 3px;
     border-radius: 2px;
     align-items: baseline;
   }
+
+  @media (max-width: 960px) {
+  
+  justify-items: center;
+}
 `;
 export const Menu = styled.div`
   display: flex;
@@ -45,10 +52,9 @@ export const Menu = styled.div`
     margin-top: 3rem;
     display: flex;
     flex-direction: column;
-    width: 20%;
-    border-top: 1px solid white;
     position: absolute;
     opacity: 1;
+    text-align:center;
   }
 `;
 
@@ -72,7 +78,8 @@ export const NavLi = styled.li`
   }
 
   @media (max-width: 960px) {
-    width: 6rem;
+    width: 100%;
+    height:25%
   }
 `;
 

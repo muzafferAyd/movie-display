@@ -16,10 +16,10 @@ export const Main = styled.div`
   justify-content: space-evenly;
   position: fixed;
   color: #bdbdbd;
-  /* @media (max-width: 960px) {
-    height: 12rem;
+   @media (max-width: 960px) {
+    height: 3rem;
     background: #0f0b1a;
-  } */
+  } 
 `;
 
 export const Copyright = styled.div`

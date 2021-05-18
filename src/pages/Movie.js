@@ -59,11 +59,11 @@ const Movie = () => {
   return (
     <>
       <Jumbotron />
-      <StyledCardList>
+      {/* <StyledCardList>
         <StyledCardTitle>Popular Movies</StyledCardTitle>
         <CardList movieData={movieData} ImgUrl={ImgUrl} />
-      </StyledCardList>
-      <StyledAllMoviesTitle>All Movies</StyledAllMoviesTitle>
+      </StyledCardList> */}
+      <StyledAllMoviesTitle>Popular Movies</StyledAllMoviesTitle>
       <StyledAllMovies>
         <AllCardList allMovieData={allMovieData} ImgUrl={ImgUrl} />
       </StyledAllMovies>
