@@ -6,23 +6,18 @@ import DetailedCard from "../component/DetailedCard/DetailedCard";
 // GET MOVIE DETAIL
 // https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US
 
-// GET MOVIE VIDEO 
+// GET MOVIE VIDEO
 // https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key=<<api_key>>&language=en-US
-
-
-
 
 const MovieDetailBaseUrl = "https://api.themoviedb.org/3/movie/";
 const apiKey = process.env.REACT_APP_API_KEY;
 const ImgUrl = "https://image.tmdb.org/t/p/w500";
-const videos = "/videos"
-
-
+const videos = "/videos";
 
 const MovieDetail = () => {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState([]);
-  const [videoKeyData, setVideoKeyData] = useState("")
+  const [videoKeyData, setVideoKeyData] = useState("");
 
   useEffect(() => {
     axios
@@ -46,11 +41,6 @@ const MovieDetail = () => {
       .catch((err) => console.log(err));
   }, [id]);
 
-
-
-
-
-  console.log("videoKey:",videoKeyData)
   return (
     <DetailedCard
       movieDetails={movieDetails}

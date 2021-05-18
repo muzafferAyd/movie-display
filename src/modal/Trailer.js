@@ -2,13 +2,12 @@ import { Modal, Button } from "react-bootstrap";
 import { useState } from "react";
 import ReactPlayer from "react-player";
 
-export default function Trailer({ movieTitle,videoKey }) {
+export default function Trailer({ movieTitle, videoKey }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const urlKey=`https://youtu.be/${videoKey}`
-  console.log("urlKey",urlKey)
+  const urlKey = `https://youtu.be/${videoKey}`;
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
@@ -22,9 +21,9 @@ export default function Trailer({ movieTitle,videoKey }) {
         <Modal.Body>
           <div className="video-wrapper">
             <ReactPlayer
-              width= "auto"
+              width="auto"
               height="345px"
-              url={urlKey} 
+              url={urlKey}
               controls
               config={{
                 youtube: {

@@ -1,9 +1,13 @@
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
-import Trailer from "../../modal/Trailer"
+import Trailer from "../../modal/Trailer";
 
-export default function DetailedCard({ movieDetails, posterImg, backdropImg, videoKey }) {
-  console.log("movieeee:",videoKey);
+export default function DetailedCard({
+  movieDetails,
+  posterImg,
+  backdropImg,
+  videoKey,
+}) {
   return (
     <Card
       style={{
@@ -29,14 +33,16 @@ export default function DetailedCard({ movieDetails, posterImg, backdropImg, vid
 
         <Card.Text>{movieDetails?.overview}</Card.Text>
 
-        <Trailer movieTitle={movieDetails.title} videoKey={videoKey}/>
+        <Trailer movieTitle={movieDetails.title} videoKey={videoKey} />
       </Card.Body>
       <ListGroup
         style={{ width: "25rem", float: "right" }}
         className="list-group-flush"
       >
         <ListGroupItem>Rating: {movieDetails?.vote_average}</ListGroupItem>
-        <ListGroupItem>Release Date: {movieDetails?.release_date}</ListGroupItem>
+        <ListGroupItem>
+          Release Date: {movieDetails?.release_date}
+        </ListGroupItem>
         <ListGroupItem>Tag: {movieDetails?.tagline}</ListGroupItem>
       </ListGroup>
       <Card.Body>
