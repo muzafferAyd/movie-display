@@ -1,4 +1,8 @@
 # This is a IMDB Movies Project with ReactJS
+You can see this project on this link. 
+https://github.com/muzafferAyd/movie-display/blob/main/src/Movie-react.gif
+
+Heroku link at the bottom
 
 ## Getting Started
 
