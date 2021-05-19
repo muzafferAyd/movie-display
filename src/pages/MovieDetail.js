@@ -31,7 +31,7 @@ const MovieDetail = () => {
       .catch((err) => console.log(err));
   }, [id]);
 
-   //get Video Details
+  //get Video Details
   useEffect(() => {
     axios
       .get(MovieDetailBaseUrl + id + videos, {
@@ -46,8 +46,18 @@ const MovieDetail = () => {
   return (
     <DetailedCard
       movieDetails={movieDetails}
-      posterImg={ImgUrl+ movieDetails?.poster_path}
-      backdropImg={ImgUrl+  movieDetails?.backdrop_path}
+      posterImg={
+        movieDetails.poster_path
+          ? ImgUrl + movieDetails?.poster_path
+          : "https://via.placeholder.com/150"
+
+          
+      }
+      backdropImg={
+        movieDetails.backdrop_path
+          ? ImgUrl + movieDetails?.backdrop_path
+          : "https://via.placeholder.com/150"
+      }
       videoKey={videoKeyData}
     />
   );

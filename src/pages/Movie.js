@@ -39,14 +39,10 @@ const Movie = () => {
 
   //PAGINATION
   const [currentPage, setCurrentPage] =useState(1);
-  const [postsPerPage, setPostsPerPage] =useState(5);
+  const [postsPerPage, setPostsPerPage] =useState(20);
+  const [totalpage, setTotalPage] =useState(500);
 
-const IndexOfLastPage = currentPage * postsPerPage
-const IndexOfFirstPage = IndexOfLastPage - postsPerPage
-const currentPosts = allMovieData.slice(IndexOfFirstPage,IndexOfLastPage)
-console.log("cuuu",currentPosts)
-console.log("IndexOfLastPage",IndexOfLastPage)
-console.log("IndexOfFirstPage",IndexOfFirstPage)
+
 const paginate= (pageNum) =>setCurrentPage(pageNum)
 const nextPage= () =>setCurrentPage(currentPage+1)
 const prevPage= () =>setCurrentPage(currentPage-1)
@@ -73,9 +69,10 @@ const prevPage= () =>setCurrentPage(currentPage-1)
         },
       })
       .then((res) => setAllMovieData(res?.data?.results))
+      .then(res=>setTotalPage(res.data.total_pages))
       .catch((err) => console.log(err));
   }, [currentPage]);
-
+console.log("totalpage",totalpage)
   return (
     <>
       <Jumbotron />
@@ -85,9 +82,9 @@ const prevPage= () =>setCurrentPage(currentPage-1)
       </StyledCardList> */}
       <StyledAllMoviesTitle>Popular Movies</StyledAllMoviesTitle>
       <StyledAllMovies>
-        <AllCardList allMovieData={currentPosts} ImgUrl={ImgUrl} />
+        <AllCardList allMovieData={allMovieData} ImgUrl={ImgUrl} />
       </StyledAllMovies>
-      <PaginationComp prevPage={prevPage} nextPage={nextPage} paginate={paginate} postsPerPage={postsPerPage} totalPosts={allMovieData.length}/>
+      <PaginationComp currentPage={currentPage} prevPage={prevPage} nextPage={nextPage} paginate={paginate} postsPerPage={postsPerPage} totalPosts={totalpage}/>
 
   
     </>

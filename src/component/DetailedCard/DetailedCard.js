@@ -35,7 +35,7 @@ export default function DetailedCard({
       <Card.Body>
         <Card.Title>{movieDetails?.title}</Card.Title>
         <Card.Text>{movieDetails?.overview}</Card.Text>
-        <Trailer movieTitle={movieDetails.title} videoKey={videoKey} />
+        <Trailer movieTitle={movieDetails.title} videoKey={videoKey?videoKey:"P2nJV6j5a7Q"} />
       </Card.Body>
       <ListGroup className="list-group-flush">
         <ListGroupItem>Rating : {movieDetails?.vote_average}</ListGroupItem>

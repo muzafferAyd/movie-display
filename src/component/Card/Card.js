@@ -12,7 +12,7 @@ const Card = ({ title, posterImg, rating, releasedData , id}) => {
   const history = useHistory();
   return (
     <StyledCardWrapper onClick={()=>history.push(`/detail/${id}`)}>
-      <StyledMovieImg src={posterImg}></StyledMovieImg>
+      <StyledMovieImg src={posterImg? posterImg: null}/>
       <StyledMovieTitle>{title}</StyledMovieTitle>
       <StyledMovieRating>{rating}</StyledMovieRating>
       <StyledMovieYear>{releasedData.slice(0, 4)}</StyledMovieYear>
