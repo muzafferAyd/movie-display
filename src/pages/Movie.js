@@ -1,18 +1,11 @@
-import CardList from "../component/CardList/CardList";
 import AllCardList from "../component/AllCardList/AllMovies";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Jumbotron from "../component/Jumbotron/Jumbotron";
-import {
-  StyledCardTitle,
-  StyledCardList,
-} from "../component/CardList/CardList.style";
-import {
-  StyledAllMovies,
-  StyledAllMoviesTitle,
-} from "../component/AllCardList/AllMovies.style";
+
+import { StyledAllMovies } from "../component/AllCardList/AllMovies.style";
 import PaginationComp from "../component/Pagination/Pagination";
-import { Button } from "react-bootstrap";
+
 /* POPULAR MOVIES API
       https://api.themoviedb.org/3/movie/popular?api_key=API_KEY&language=en-US&page=1
 */
@@ -24,13 +17,13 @@ import { Button } from "react-bootstrap";
 // IMAGE API
 //    https://image.tmdb.org/t/p/w500
 
-const baseUrl = "https://api.themoviedb.org/3/movie/popular";
+// const baseUrl = "https://api.themoviedb.org/3/movie/popular";
 const allMovieBaseUrl = "https://api.themoviedb.org/3/discover/movie";
 const ImgUrl = "https://image.tmdb.org/t/p/w500";
 const apiKey = process.env.REACT_APP_API_KEY;
 
 const Movie = () => {
-  const [movieData, setMovieData] = useState([]);
+
   const [allMovieData, setAllMovieData] = useState([]);
   //PAGINATION
   const [currentPage, setCurrentPage] = useState(1);
@@ -40,18 +33,7 @@ const Movie = () => {
   const paginate = (pageNum) => setCurrentPage(pageNum);
   const nextPage = () => setCurrentPage(currentPage + 1);
   const prevPage = () => setCurrentPage(currentPage - 1);
-  // getPopuparMovies
-  useEffect(() => {
-    axios
-      .get(baseUrl, {
-        params: {
-          api_key: apiKey,
-          page: currentPage,
-        },
-      })
-      .then((res) => setMovieData(res?.data?.results))
-      .catch((err) => console.log(err));
-  }, []);
+
 
   // getAllMovies
   useEffect(() => {
@@ -67,7 +49,6 @@ const Movie = () => {
       })
       .catch((err) => console.log(err));
   }, [currentPage]);
-  console.log("total");
 
   const getFilterPopular = allMovieData.filter((item) => item.vote_average > 5);
   return (
