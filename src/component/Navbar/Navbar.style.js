@@ -15,7 +15,7 @@ export const NavList = styled.div`
   top: 0;
   z-index: 1;
   @media (max-width: 960px) {
-    height: 12rem;
+    height: 7rem;
 
   }
 
@@ -49,12 +49,14 @@ export const Menu = styled.div`
   list-style: none;
 
   @media (max-width: 960px) {
-    margin-top: 3rem;
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: static;
     opacity: 1;
     text-align:center;
+    height:5rem;
+    align-items:center;
   }
 `;
 
@@ -79,7 +81,14 @@ export const NavLi = styled.li`
 
   @media (max-width: 960px) {
     width: 100%;
-    height:25%
+    padding:0;
+    margin: 0.4rem;
+  }
+  @media (max-width: 456) {
+    width: 100%;
+    padding:0;
+    margin: 0.2rem;
+    
   }
 `;
 

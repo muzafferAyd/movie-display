@@ -5,13 +5,13 @@ export const StyledAllMovies = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   margin-left: -20px;
-  /* @media (max-width: 800px) {
+   @media (max-width: 800px) {
    
-    flex-direction: column;
-  } */
+    flex-direction:row;
+  } 
 `;
 
 export const StyledAllMoviesTitle = styled.h2`
   color: #0f0b1a;
- // margin-left: 55px;
+  margin-left: 35px;
 `;

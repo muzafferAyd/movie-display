@@ -2,7 +2,6 @@ import Card from "../Card/Card";
 
 
 const CardList = ({ movieData, ImgUrl }) => {
-
   return (
     <>
       {movieData &&

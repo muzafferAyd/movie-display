@@ -11,13 +11,13 @@ import { StyledAppContainer, StyledContextContainer } from "./App.style.js";
 const App = () => {
   return (
     <StyledAppContainer>
-      <Navbar />
+      <Navbar  />
       <StyledContextContainer>
         <Switch>
           <Route path="/about" component={About} exact />
           <Route path="/detail/:id" component={MovieDetail} exact />
-          <Route path="/" component={Movie} />
-        </Switch>{" "}
+          <Route path="/" component={Movie}></Route>
+        </Switch>
       </StyledContextContainer>
       <Footer />
     </StyledAppContainer>

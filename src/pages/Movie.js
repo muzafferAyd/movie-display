@@ -11,8 +11,8 @@ import {
   StyledAllMovies,
   StyledAllMoviesTitle,
 } from "../component/AllCardList/AllMovies.style";
-import PaginationComp from "../component/Pagination/Pagination"
-
+import PaginationComp from "../component/Pagination/Pagination";
+import { Button } from "react-bootstrap";
 /* POPULAR MOVIES API
       https://api.themoviedb.org/3/movie/popular?api_key=API_KEY&language=en-US&page=1
 */
@@ -29,23 +29,17 @@ const allMovieBaseUrl = "https://api.themoviedb.org/3/discover/movie";
 const ImgUrl = "https://image.tmdb.org/t/p/w500";
 const apiKey = process.env.REACT_APP_API_KEY;
 
-
-
-
-
 const Movie = () => {
   const [movieData, setMovieData] = useState([]);
   const [allMovieData, setAllMovieData] = useState([]);
-
   //PAGINATION
-  const [currentPage, setCurrentPage] =useState(1);
-  const [postsPerPage, setPostsPerPage] =useState(20);
-  const [totalpage, setTotalPage] =useState(500);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(20);
+  const [totalpage, setTotalPage] = useState(500);
 
-
-const paginate= (pageNum) =>setCurrentPage(pageNum)
-const nextPage= () =>setCurrentPage(currentPage+1)
-const prevPage= () =>setCurrentPage(currentPage-1)
+  const paginate = (pageNum) => setCurrentPage(pageNum);
+  const nextPage = () => setCurrentPage(currentPage + 1);
+  const prevPage = () => setCurrentPage(currentPage - 1);
   // getPopuparMovies
   useEffect(() => {
     axios
@@ -59,7 +53,7 @@ const prevPage= () =>setCurrentPage(currentPage-1)
       .catch((err) => console.log(err));
   }, []);
 
-    // getAllMovies
+  // getAllMovies
   useEffect(() => {
     axios
       .get(allMovieBaseUrl, {
@@ -68,25 +62,30 @@ const prevPage= () =>setCurrentPage(currentPage-1)
           page: currentPage,
         },
       })
-      .then((res) => setAllMovieData(res?.data?.results))
-      .then(res=>setTotalPage(res.data.total_pages))
+      .then((res) => {
+        setAllMovieData(res?.data?.results);
+      })
       .catch((err) => console.log(err));
   }, [currentPage]);
-console.log("totalpage",totalpage)
+  console.log("total");
+
+  const getFilterPopular = allMovieData.filter((item) => item.vote_average > 5);
   return (
     <>
       <Jumbotron />
-      {/* <StyledCardList>
-        <StyledCardTitle>Popular Movies</StyledCardTitle>
-        <CardList movieData={movieData} ImgUrl={ImgUrl} />
-      </StyledCardList> */}
-      <StyledAllMoviesTitle>Popular Movies</StyledAllMoviesTitle>
-      <StyledAllMovies>
-        <AllCardList allMovieData={allMovieData} ImgUrl={ImgUrl} />
-      </StyledAllMovies>
-      <PaginationComp currentPage={currentPage} prevPage={prevPage} nextPage={nextPage} paginate={paginate} postsPerPage={postsPerPage} totalPosts={totalpage}/>
 
-  
+      <StyledAllMovies>
+        <AllCardList allMovieData={getFilterPopular} ImgUrl={ImgUrl} />
+      </StyledAllMovies>
+
+      <PaginationComp
+        currentPage={currentPage}
+        prevPage={prevPage}
+        nextPage={nextPage}
+        paginate={paginate}
+        postsPerPage={postsPerPage}
+        totalPosts={totalpage}
+      />
     </>
   );
 };

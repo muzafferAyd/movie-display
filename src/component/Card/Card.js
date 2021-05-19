@@ -15,7 +15,7 @@ const Card = ({ title, posterImg, rating, releasedData , id}) => {
       <StyledMovieImg src={posterImg? posterImg: null}/>
       <StyledMovieTitle>{title}</StyledMovieTitle>
       <StyledMovieRating>{rating}</StyledMovieRating>
-      <StyledMovieYear>{releasedData.slice(0, 4)}</StyledMovieYear>
+      <StyledMovieYear>{releasedData?.slice(0, 4)}</StyledMovieYear>
     </StyledCardWrapper>
   );
 };
