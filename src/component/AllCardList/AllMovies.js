@@ -1,6 +1,7 @@
 import Card from "../Card/Card";
 import React from "react";
 
+
 const AllMovies = ({ allMovieData, ImgUrl }) => {
   return (
     <>
@@ -15,8 +16,9 @@ const AllMovies = ({ allMovieData, ImgUrl }) => {
               releasedData={movie.release_date}
               id={movie.id}
             />
+           
           );
-        })}
+        })} 
     </>
   );
 };

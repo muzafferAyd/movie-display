@@ -11,6 +11,7 @@ import {
   StyledAllMovies,
   StyledAllMoviesTitle,
 } from "../component/AllCardList/AllMovies.style";
+import PaginationComp from "../component/Pagination/Pagination"
 
 /* POPULAR MOVIES API
       https://api.themoviedb.org/3/movie/popular?api_key=API_KEY&language=en-US&page=1
@@ -28,33 +29,52 @@ const allMovieBaseUrl = "https://api.themoviedb.org/3/discover/movie";
 const ImgUrl = "https://image.tmdb.org/t/p/w500";
 const apiKey = process.env.REACT_APP_API_KEY;
 
+
+
+
+
 const Movie = () => {
   const [movieData, setMovieData] = useState([]);
   const [allMovieData, setAllMovieData] = useState([]);
 
+  //PAGINATION
+  const [currentPage, setCurrentPage] =useState(1);
+  const [postsPerPage, setPostsPerPage] =useState(5);
+
+const IndexOfLastPage = currentPage * postsPerPage
+const IndexOfFirstPage = IndexOfLastPage - postsPerPage
+const currentPosts = allMovieData.slice(IndexOfFirstPage,IndexOfLastPage)
+console.log("cuuu",currentPosts)
+console.log("IndexOfLastPage",IndexOfLastPage)
+console.log("IndexOfFirstPage",IndexOfFirstPage)
+const paginate= (pageNum) =>setCurrentPage(pageNum)
+const nextPage= () =>setCurrentPage(currentPage+1)
+const prevPage= () =>setCurrentPage(currentPage-1)
+  // getPopuparMovies
   useEffect(() => {
     axios
       .get(baseUrl, {
         params: {
           api_key: apiKey,
-          page: 1,
+          page: currentPage,
         },
       })
-      .then((res) => setMovieData(res.data.results))
+      .then((res) => setMovieData(res?.data?.results))
       .catch((err) => console.log(err));
   }, []);
 
+    // getAllMovies
   useEffect(() => {
     axios
       .get(allMovieBaseUrl, {
         params: {
           api_key: apiKey,
-          page: 1,
+          page: currentPage,
         },
       })
-      .then((res) => setAllMovieData(res.data.results))
+      .then((res) => setAllMovieData(res?.data?.results))
       .catch((err) => console.log(err));
-  }, []);
+  }, [currentPage]);
 
   return (
     <>
@@ -65,8 +85,11 @@ const Movie = () => {
       </StyledCardList> */}
       <StyledAllMoviesTitle>Popular Movies</StyledAllMoviesTitle>
       <StyledAllMovies>
-        <AllCardList allMovieData={allMovieData} ImgUrl={ImgUrl} />
+        <AllCardList allMovieData={currentPosts} ImgUrl={ImgUrl} />
       </StyledAllMovies>
+      <PaginationComp prevPage={prevPage} nextPage={nextPage} paginate={paginate} postsPerPage={postsPerPage} totalPosts={allMovieData.length}/>
+
+  
     </>
   );
 };

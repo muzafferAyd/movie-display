@@ -8,52 +8,45 @@ export default function DetailedCard({
   backdropImg,
   videoKey,
 }) {
-
+  const styles = {
+    card: {
+      borderRadius: 55,
+      padding: "3rem",
+      width: "35rem",
+      margin: "auto",
+    },
+    cardImage: {
+      height: "100%",
+      objectFit: "cover",
+      borderRadius: 55,
+      width: "25rem",
+      margin: "auto",
+    },
+  };
 
   return (
-    <Card
-      style={{
-        borderRadius: "1rem",
-        width: "30rem",
-        margin: "auto",
-        padding: "2rem",
-      }}
-    >
+    <Card style={styles.card}>
       <Card.Img
         variant="bottom"
         src={posterImg}
         alt="Movie-poster"
-        style={{
-          borderRadius: "1rem",
-          width: "18rem",
-          margin: "auto",
-          height: "25rem",
-        }}
+        style={styles.cardImage}
       />
       <Card.Body>
         <Card.Title>{movieDetails?.title}</Card.Title>
-
         <Card.Text>{movieDetails?.overview}</Card.Text>
-
         <Trailer movieTitle={movieDetails.title} videoKey={videoKey} />
       </Card.Body>
-      <ListGroup
-        style={{ width: "18rem", float: "right" }}
-        className="list-group-flush"
-      >
-        <ListGroupItem>Rating: {movieDetails?.vote_average}</ListGroupItem>
+      <ListGroup className="list-group-flush">
+        <ListGroupItem>Rating : {movieDetails?.vote_average}</ListGroupItem>
         <ListGroupItem>
-          Release Date: {movieDetails?.release_date}
+          Release Date : {movieDetails?.release_date}
         </ListGroupItem>
-        <ListGroupItem>Tag: {movieDetails?.tagline}</ListGroupItem>
+        <ListGroupItem>Tag : {movieDetails?.tagline}</ListGroupItem>
       </ListGroup>
       <Card.Body>
         <Card.Img variant="top" src={backdropImg} alt="Backdrop-poster" />
       </Card.Body>
     </Card>
   );
-
-
 }
-
-
